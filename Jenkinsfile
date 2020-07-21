@@ -3,6 +3,8 @@ node{
     git 'https://github.com/GaddeLaxmi/SimpleCalculaterApplication'
     }
     stage('Compile and Package'){
-      sh 'mvn package'
+      //get mvn home pack
+      def mvnhome = tool name: 'Maven', type: 'maven'
+      sh "${mvnhome}/bin/mvn package"
     }
   }
